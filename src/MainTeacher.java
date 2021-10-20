@@ -13,10 +13,10 @@ public class MainTeacher {
             System.out.println("Menu: ");
             System.out.println("1. Print list teacher. ");
             System.out.println("2. Add teacher. ");
-            System.out.println("3. Find the teacher by id.");
-            System.out.println("4. Sort the teacher by specialize.");
+            System.out.println("3. Find the teacher by id. ");
+            System.out.println("4. Sort the teacher by expertise. ");
             System.out.println("5. Delete the teacher by id. ");
-            System.out.println("6. Edit teacher");
+            System.out.println("6. Edit teacher. ");
             System.out.println("0. End program. ");
             choice = scanner.nextInt();
             switch (choice) {
@@ -41,7 +41,7 @@ public class MainTeacher {
                     teacherManagement.print();
                     break;
                 case 6:
-                    System.out.print("Enter id teacher need to fix: ");
+                    System.out.print("Enter id of the teacher want to edit: ");
                     int edit = scanner.nextInt();
 
                     if (teacherManagement.findIndexById(edit)  != -1) {
