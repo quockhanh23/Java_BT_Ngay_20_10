@@ -69,21 +69,21 @@ public class StudentManagement implements Management<Student> {
 
     }
 
+        public Student create () {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Enter name: ");
+            String name = scanner.nextLine();
+            System.out.print("Enter id: ");
+            int id = scanner.nextInt();
+            System.out.print("Enter medium score: ");
+            int avg = scanner.nextInt();
+            System.out.print("Enter age: ");
+            int age = scanner.nextInt();
+            return new Student(id, name, avg, age);
 
-    public Student create() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Nhập tên: ");
-        String name = scanner.nextLine();
-        System.out.print("Nhập id: ");
-        int id = scanner.nextInt();
-        System.out.print("Nhập điểm trung bình: ");
-        int avg = scanner.nextInt();
-        System.out.print("Nhập tuổi: ");
-        int age = scanner.nextInt();
-        return new Student(id, name, avg, age);
-
+        }
     }
-}
+
 
 
 

@@ -20,8 +20,8 @@ public class Teacher extends Person {
 
     @Override
     public String toString() {
-        return "Teacher{" + " Tên: " + getName() + " Tuổi " + getAge() + " id: " + getId() +
-                " specialized='" + specialized + '\'' +
+        return "Teacher{" + " Name the teacher: " + getName() + " age: " + getAge() + " id: " + getId() +
+                " specialized: '" + specialized + '\'' +
                 '}';
     }
 }

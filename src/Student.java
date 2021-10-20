@@ -10,6 +10,7 @@ public class Student extends Person {
 
     }
 
+
     public int getAvgScore() {
         return avgScore;
     }
@@ -22,7 +23,7 @@ public class Student extends Person {
     @Override
     public String toString() {
         return "Student{"
-                + " Tên " + getName() + " id " + getId() + " Điểm " + avgScore +
+                + " Name " + getName() + " id " + getId() + " Medium score " + avgScore +
                 '}';
     }
 }
