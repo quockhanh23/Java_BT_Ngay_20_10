@@ -10,12 +10,4 @@ public interface Management<T> {
 
     void deleteById(int id);
 
-    void sortByScore();
-
-    int sumScore();
-
-    Student create();
-
-
-
 }

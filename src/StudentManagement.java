@@ -53,13 +53,12 @@ public class StudentManagement implements Management<Student> {
 
     }
 
-    @Override
+
     public void sortByScore() {
         listStudent.sort(Comparator.comparingInt(s -> s.getAvgScore()));
 
     }
 
-    @Override
     public int sumScore() {
         int sumScore = 0;
         for (int i = 0; i < listStudent.size(); i++) {
@@ -70,7 +69,7 @@ public class StudentManagement implements Management<Student> {
 
     }
 
-    @Override
+
     public Student create() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Nhập tên: ");
