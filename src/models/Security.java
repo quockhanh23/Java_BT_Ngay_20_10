@@ -1,4 +1,6 @@
-public class Security extends Person{
+package models;
+
+public class Security extends Person {
     private static String teamSecurity = "SEAL 6";
 
     public Security(int id, String name, int age) {
@@ -18,6 +20,6 @@ public class Security extends Person{
 
     @Override
     public String toString() {
-        return super.toString() + " Name: "+ getName() + " Age: " + getAge() + " Team " + teamSecurity ;
+        return " Name: "+ getName() + " Age: " + getAge() + " Team " + teamSecurity ;
     }
 }

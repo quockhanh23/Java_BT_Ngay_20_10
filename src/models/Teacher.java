@@ -1,3 +1,7 @@
+package models;
+
+import models.Person;
+
 public class Teacher extends Person {
     private String specialized;
 
@@ -20,7 +24,7 @@ public class Teacher extends Person {
 
     @Override
     public String toString() {
-        return "Teacher{" + " Name the teacher: " + getName() + " age: " + getAge() + " id: " + getId() +
+        return "models.Teacher{" + " Name the teacher: " + getName() + " age: " + getAge() + " id: " + getId() +
                 " specialized: '" + specialized + '\'' +
                 '}';
     }

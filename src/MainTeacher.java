@@ -1,3 +1,6 @@
+import models.Teacher;
+import service.impl.TeacherManagement;
+
 import java.util.Scanner;
 
 public class MainTeacher {

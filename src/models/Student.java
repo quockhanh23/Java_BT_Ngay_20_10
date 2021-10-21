@@ -1,3 +1,7 @@
+package models;
+
+import models.Person;
+
 public class Student extends Person {
     private int avgScore;
 
@@ -22,7 +26,7 @@ public class Student extends Person {
 
     @Override
     public String toString() {
-        return "Student{"
+        return "models.Student{"
                 + " Name " + getName() + " id " + getId() + " Medium score " + avgScore +
                 '}';
     }

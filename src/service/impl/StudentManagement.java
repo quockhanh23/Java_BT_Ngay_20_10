@@ -1,3 +1,7 @@
+package service.impl;
+
+import models.Student;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Scanner;
@@ -54,7 +58,7 @@ public class StudentManagement implements Management<Student> {
     }
 
 
-    public void sortByScore() {
+    public void sortByScoreIncrease() {
         listStudent.sort(Comparator.comparingInt(s -> s.getAvgScore()));
 
     }

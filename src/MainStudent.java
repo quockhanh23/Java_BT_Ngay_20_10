@@ -1,3 +1,6 @@
+import models.Student;
+import service.impl.StudentManagement;
+
 import java.util.Scanner;
 
 public class MainStudent {
@@ -32,12 +35,12 @@ public class MainStudent {
                     System.out.println(studentManagement.findIndexById(find));
                     break;
                 case 4:
-                    studentManagement.sortByScore();
+                    studentManagement.sortByScoreIncrease();
                     studentManagement.print();
                     break;
                 case 5:
-                    int delete = scanner.nextInt();
-                    studentManagement.deleteById(delete);
+                    int deleteStudent = scanner.nextInt();
+                    studentManagement.deleteById(deleteStudent);
                     studentManagement.print();
                     break;
                 case 6:
