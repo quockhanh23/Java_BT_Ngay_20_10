@@ -44,7 +44,7 @@ public class MainStudent {
                     studentManagement.print();
                     break;
                 case 6:
-                    System.out.println(" Total score : " + studentManagement.sumScore());
+                    System.out.println(" Total score : " + studentManagement.totalScore());
                     break;
                 case 7:
                     System.out.print("Enter id student need to fix: ");

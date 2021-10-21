@@ -63,7 +63,7 @@ public class StudentManagement implements Management<Student> {
 
     }
 
-    public int sumScore() {
+    public int totalScore() {
         int sumScore = 0;
         for (int i = 0; i < listStudent.size(); i++) {
             sumScore += listStudent.get(i).getAvgScore();
