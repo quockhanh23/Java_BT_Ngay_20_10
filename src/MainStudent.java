@@ -18,7 +18,7 @@ public class MainStudent {
             System.out.println("4. Sort student by medium score. ");
             System.out.println("5. Delete student by id. ");
             System.out.println("6. Total score of all students. ");
-            System.out.println("7. Edit students. ");
+            System.out.println("7. Edit student. ");
             System.out.println("0. End program. ");
 
             choice = scanner.nextInt();
