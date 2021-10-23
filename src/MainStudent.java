@@ -51,6 +51,7 @@ public class MainStudent {
                     int edit = scanner.nextInt();
                     if (studentManagement.findIndexById(edit) != -1) {
                         studentManagement.update(studentManagement.create(), edit);
+                        System.out.println("Fix done!. ");
                     } else
                         System.out.println("No id had found");
                     System.out.println("****************************");

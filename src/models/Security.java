@@ -20,6 +20,6 @@ public class Security extends Person {
 
     @Override
     public String toString() {
-        return " Name: "+ getName() + " Age: " + getAge() + " Team " + teamSecurity ;
+        return " Name: "+ getName() + ", Age: " + getAge() + ", Team " + teamSecurity ;
     }
 }

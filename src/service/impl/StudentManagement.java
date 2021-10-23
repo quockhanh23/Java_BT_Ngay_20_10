@@ -2,14 +2,12 @@ package service.impl;
 
 import models.Student;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Scanner;
+import java.util.*;
 
 public class StudentManagement implements Management<Student> {
-    private ArrayList<Student> listStudent;
+    private AbstractList<Student> listStudent;
 
-    public StudentManagement(ArrayList<Student> listStudent) {
+    public StudentManagement(AbstractList<Student> listStudent) {
         this.listStudent = listStudent;
     }
 
@@ -36,7 +34,7 @@ public class StudentManagement implements Management<Student> {
     public int findIndexById(int id) {
         for (int i = 0; i < listStudent.size(); i++) {
             if (listStudent.get(i).getId() == id) {
-                return i;
+                return listStudent.get(i).getId();
 
             }
         }
@@ -73,20 +71,22 @@ public class StudentManagement implements Management<Student> {
 
     }
 
-        public Student create () {
-            Scanner scanner = new Scanner(System.in);
-            System.out.print("Enter name: ");
-            String name = scanner.nextLine();
-            System.out.print("Enter id: ");
-            int id = scanner.nextInt();
-            System.out.print("Enter medium score: ");
-            int avg = scanner.nextInt();
-            System.out.print("Enter age: ");
-            int age = scanner.nextInt();
-            return new Student(id, name, avg, age);
+    public Student create() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter name: ");
+        String name = scanner.nextLine();
+        System.out.print("Enter id: ");
+        int id = scanner.nextInt();
+        System.out.print("Enter medium score: ");
+        int avg = scanner.nextInt();
+        System.out.print("Enter age: ");
+        int age = scanner.nextInt();
+        return new Student(id, name, avg, age);
 
-        }
     }
+}
+
+    
 
 
 

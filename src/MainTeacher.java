@@ -7,57 +7,93 @@ public class MainTeacher {
     public static void main(String[] args) {
         TeacherManagement teacherManagement = new TeacherManagement();
         teacherManagement.add(new Teacher(1, "k1", 22, "Match"));
-        teacherManagement.add(new Teacher(2, "k2", 30, "Physicscal"));
+        teacherManagement.add(new Teacher(2, "k2", 30, "Chemistry"));
         teacherManagement.add(new Teacher(3, "k3", 45, "Biological"));
+        teacherManagement.add(new Teacher(4, "k4", 38, "Geography"));
 
         int choice = -1;
         while (choice != 0) {
             Scanner scanner = new Scanner(System.in);
-            System.out.println("Menu: ");
+            System.out.println("Main menu: ");
             System.out.println("1. Print list teacher. ");
             System.out.println("2. Add teacher. ");
             System.out.println("3. Find the teacher by id. ");
             System.out.println("4. Sort the teacher by expertise. ");
             System.out.println("5. Delete the teacher by id. ");
             System.out.println("6. Edit teacher. ");
+            System.out.println("7. DELETE ALL. ");
+            System.out.println("8. Check list is empty. ");
+            System.out.println("9. Find the teacher by name. ");
             System.out.println("0. End program. ");
             choice = scanner.nextInt();
             switch (choice) {
                 case 1:
+                    System.out.println("You just chose number " + choice);
                     teacherManagement.print();
+                    System.out.println("****************************");
                     break;
                 case 2:
+                    System.out.println("You just chose number " + choice);
                     teacherManagement.add(teacherManagement.creat());
+                    System.out.println("****************************");
                     break;
                 case 3:
+                    System.out.println("You just chose number " + choice);
+                    System.out.print("Enter id: ");
                     int find = scanner.nextInt();
-                    teacherManagement.findIndexById(find);
-                    System.out.println(teacherManagement.findIndexById(find));
+                    teacherManagement.findIndexById2(find);
+                    System.out.println(teacherManagement.findIndexById2(find));
+                    System.out.println("****************************");
                     break;
                 case 4:
+                    System.out.println("You just chose number " + choice);
                     teacherManagement.sortBySpecialized();
                     teacherManagement.print();
+                    System.out.println("****************************");
                     break;
                 case 5:
+                    System.out.println("You just chose number " + choice);
                     int delete = scanner.nextInt();
                     teacherManagement.deleteById(delete);
                     teacherManagement.print();
+                    System.out.println("****************************");
                     break;
                 case 6:
+                    System.out.println("You just chose number " + choice);
                     System.out.print("Enter id of the teacher want to edit: ");
                     int edit = scanner.nextInt();
-
-                    if (teacherManagement.findIndexById(edit)  != -1) {
+                    boolean check = (teacherManagement.findIndexById(edit) < teacherManagement.size()
+                            && teacherManagement.findIndexById(edit) > -1);
+                    if (check) {
                         teacherManagement.update(teacherManagement.creat(), edit);
+                        System.out.println("Fix done!. ");
                     } else
-                        System.out.println("No id had found");
+                        System.out.println("No id had found. ");
+                    System.out.println("****************************");
+                    break;
+                case 7:
+                    System.out.println("You just chose number " + choice);
+                    teacherManagement.deleteAll();
+                    System.out.println("****************************");
+                    break;
+                case 8:
+                    System.out.println("You just chose number " + choice);
+                    teacherManagement.checkList();
+                    System.out.println("****************************");
+                    break;
+                case 9:
+                    System.out.println("You just chose number " + choice);
+                    System.out.print("Enter name: ");
+                    teacherManagement.findIndexByName();
                     System.out.println("****************************");
                     break;
 
                 case 0:
+                    System.out.println("You just chose number " + choice + " --> Ending!...");
                     System.exit(0);
+
                 default:
-                    System.out.println("This option is not available");
+                    System.out.println("This option is not available. ");
                     System.out.println("****************************");
             }
         }

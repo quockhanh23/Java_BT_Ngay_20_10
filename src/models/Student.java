@@ -14,7 +14,6 @@ public class Student extends Person {
 
     }
 
-
     public int getAvgScore() {
         return avgScore;
     }
@@ -27,7 +26,7 @@ public class Student extends Person {
     @Override
     public String toString() {
         return "models.Student{"
-                + " Name " + getName() + " id " + getId() + " Medium score " + avgScore +
+                + " Name " + getName() + ", Id " + getId() + ", Age " + getAge() + ", Medium score " + avgScore +
                 '}';
     }
 }

@@ -1,31 +1,29 @@
 package models;
 
-import models.Person;
-
 public class Teacher extends Person {
-    private String specialized;
+    private String expertise;
 
     public Teacher(int id, String name, int age, String specialized) {
         super(id, name, age);
-        this.specialized = specialized;
+        this.expertise = specialized;
     }
 
     public Teacher() {
 
     }
 
-    public String getSpecialized() {
-        return specialized;
+    public String getExpertise() {
+        return expertise;
     }
 
-    public void setSpecialized(String specialized) {
-        this.specialized = specialized;
+    public void setExpertise(String expertise) {
+        this.expertise = expertise;
     }
 
     @Override
     public String toString() {
-        return "models.Teacher{" + " Name the teacher: " + getName() + " age: " + getAge() + " id: " + getId() +
-                " specialized: '" + specialized + '\'' +
+        return "models.Teacher{" + " Name teacher: " + getName() + ", Age: " + getAge() + ", Id: " + getId() +
+                ", Expertise: '" + expertise + '\'' +
                 '}';
     }
 }

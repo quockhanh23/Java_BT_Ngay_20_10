@@ -5,7 +5,7 @@ import models.Security;
 import java.util.ArrayList;
 
 public class SecurityManagement implements Management<Security> {
-private ArrayList<Security> listSecurity = new ArrayList<>();
+    private ArrayList<Security> listSecurity;
 
     public SecurityManagement(ArrayList<Security> listSecurity) {
         this.listSecurity = listSecurity;
@@ -17,7 +17,7 @@ private ArrayList<Security> listSecurity = new ArrayList<>();
 
     @Override
     public void print() {
-        for (int i = 0; i <listSecurity.size(); i++) {
+        for (int i = 0; i < listSecurity.size(); i++) {
             System.out.println(listSecurity.get(i));
 
         }
@@ -39,10 +39,9 @@ private ArrayList<Security> listSecurity = new ArrayList<>();
     public void update(Security security, int id) {
 
     }
-
-
     @Override
     public void deleteById(int id) {
 
     }
+
 }

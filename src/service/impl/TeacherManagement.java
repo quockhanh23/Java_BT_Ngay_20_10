@@ -11,7 +11,6 @@ import java.util.Scanner;
 public class TeacherManagement implements Management<Teacher> {
     private ArrayList<Teacher> listTeacher = new ArrayList<>();
 
-
     public TeacherManagement(ArrayList<Student> listStudent) {
         this.listTeacher = listTeacher;
     }
@@ -30,7 +29,6 @@ public class TeacherManagement implements Management<Teacher> {
     @Override
     public void add(Teacher teacher) {
         listTeacher.add(teacher);
-
     }
 
     @Override
@@ -38,12 +36,10 @@ public class TeacherManagement implements Management<Teacher> {
         for (int i = 0; i < listTeacher.size(); i++) {
             if (listTeacher.get(i).getId() == id) {
                 return i;
-
             }
         }
         return -1;
     }
-
 
     @Override
     public void update(Teacher teacher, int id) {
@@ -57,19 +53,64 @@ public class TeacherManagement implements Management<Teacher> {
         listTeacher.remove(index);
     }
 
+    public void deleteAll() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Warrning!!!, you really want to do?. ");
+        System.out.print("Enter '1' = (Yes): ");
+        int number = scanner.nextInt();
+        if (number == 1) {
+            listTeacher.clear();
+            System.out.println("The lists has been delete!. ");
+        } else {
+            System.out.println("Back to menu. ");
+        }
+    }
+
     public Teacher creat() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter name: ");
         String name = scanner.nextLine();
-        System.out.print("Enter majors: ");
+        System.out.print("Enter specialize: ");
         String specialized = scanner.nextLine();
         System.out.print("Enter id: ");
         int id = scanner.nextInt();
-        System.out.print("Enter age : ");
+        System.out.print("Enter age: ");
         int age = scanner.nextInt();
 
         return new Teacher(id, name, age, specialized);
+    }
 
+    public void checkList() {
+        boolean check = listTeacher.isEmpty();
+        if (check) {
+            System.out.println("Empty list. ");
+        } else {
+            System.out.println("The list has: " + listTeacher.size() + " element. ");
+        }
+    }
+
+    public String findIndexById2(int id) {
+        for (int i = 0; i < listTeacher.size(); i++) {
+            if (listTeacher.get(i).getId() == id) {
+                return "The teacher have id: " + i + 1 + " " + listTeacher.get(i);
+            }
+        }
+        return "Can't find. ";
+    }
+
+    public void findIndexByName() {
+        Scanner scanner = new Scanner(System.in);
+        String name1 = scanner.nextLine();
+        for (int i = 0; i < listTeacher.size(); i++) {
+            boolean check = listTeacher.get(i).getName().equals(name1);
+            if (check) {
+                System.out.println("Had found: " + listTeacher.get(i).getName() +
+                        " information: " + listTeacher.get(i));
+            }
+        }
+    }
+    public int size() {
+        return listTeacher.size();
     }
 
     public void sortByName1() {
@@ -77,7 +118,6 @@ public class TeacherManagement implements Management<Teacher> {
     }
 
     public void sortBySpecialized() {
-        listTeacher.sort(Comparator.comparing(Teacher::getSpecialized));
+        listTeacher.sort(Comparator.comparing(Teacher::getExpertise));
     }
-
 }
