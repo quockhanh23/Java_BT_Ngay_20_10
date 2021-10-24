@@ -30,12 +30,12 @@ public class MainTeacher {
                 case 1:
                     System.out.println("You just chose number " + choice);
                     teacherManagement.print();
-                    System.out.println("****************************");
+                    System.out.println("_________________________________");
                     break;
                 case 2:
                     System.out.println("You just chose number " + choice);
                     teacherManagement.add(teacherManagement.creat());
-                    System.out.println("****************************");
+                    System.out.println("_________________________________");
                     break;
                 case 3:
                     System.out.println("You just chose number " + choice);
@@ -43,20 +43,21 @@ public class MainTeacher {
                     int find = scanner.nextInt();
                     teacherManagement.findIndexById2(find);
                     System.out.println(teacherManagement.findIndexById2(find));
-                    System.out.println("****************************");
+                    System.out.println("_________________________________");
                     break;
                 case 4:
                     System.out.println("You just chose number " + choice);
                     teacherManagement.sortBySpecialized();
                     teacherManagement.print();
-                    System.out.println("****************************");
+                    System.out.println("_________________________________");
                     break;
                 case 5:
                     System.out.println("You just chose number " + choice);
                     int delete = scanner.nextInt();
                     teacherManagement.deleteById(delete);
                     teacherManagement.print();
-                    System.out.println("****************************");
+                    System.out.println("The teacher have id: " + delete + ", had been delete. ");
+                    System.out.println("_________________________________");
                     break;
                 case 6:
                     System.out.println("You just chose number " + choice);
@@ -69,34 +70,34 @@ public class MainTeacher {
                         System.out.println("Fix done!. ");
                     } else
                         System.out.println("No id had found. ");
-                    System.out.println("****************************");
+                    System.out.println("_________________________________");
                     break;
                 case 7:
                     System.out.println("You just chose number " + choice);
                     teacherManagement.deleteAll();
-                    System.out.println("****************************");
+                    System.out.println("_________________________________");
                     break;
                 case 8:
                     System.out.println("You just chose number " + choice);
                     teacherManagement.checkList();
-                    System.out.println("****************************");
+                    System.out.println("_________________________________");
                     break;
                 case 9:
                     System.out.println("You just chose number " + choice);
                     System.out.print("Enter name: ");
                     teacherManagement.findIndexByName();
-                    System.out.println("****************************");
+                    System.out.println("_________________________________");
                     break;
 
                 case 0:
                     System.out.println("You just chose number " + choice + " --> Ending!...");
+                    System.out.println("_________________________________");
                     System.exit(0);
 
                 default:
                     System.out.println("This option is not available. ");
-                    System.out.println("****************************");
+                    System.out.println("_________________________________");
             }
         }
-
     }
 }

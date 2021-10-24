@@ -21,6 +21,8 @@ public class TeacherManagement implements Management<Teacher> {
 
     @Override
     public void print() {
+        System.out.println("_________________________________");
+        System.out.println(String.format("%-5s%-10s%-7s%-5s", "ID", "Name", "Age", "Expertise"));
         for (int i = 0; i < listTeacher.size(); i++) {
             System.out.println(listTeacher.get(i));
         }
@@ -56,11 +58,11 @@ public class TeacherManagement implements Management<Teacher> {
     public void deleteAll() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Warrning!!!, you really want to do?. ");
-        System.out.print("Enter '1' = (Yes): ");
+        System.out.print("Enter 'number 1' = (Yes), or other numbers = (No): ");
         int number = scanner.nextInt();
         if (number == 1) {
             listTeacher.clear();
-            System.out.println("The lists has been delete!. ");
+            System.out.println("The lists had been delete!. ");
         } else {
             System.out.println("Back to menu. ");
         }
@@ -85,14 +87,14 @@ public class TeacherManagement implements Management<Teacher> {
         if (check) {
             System.out.println("Empty list. ");
         } else {
-            System.out.println("The list has: " + listTeacher.size() + " element. ");
+            System.out.println("The list has: " + listTeacher.size() + " elements. ");
         }
     }
 
     public String findIndexById2(int id) {
         for (int i = 0; i < listTeacher.size(); i++) {
             if (listTeacher.get(i).getId() == id) {
-                return "The teacher have id: " + i + 1 + " " + listTeacher.get(i);
+                return "The teacher have id: " + (i + 1) + ", information: " + listTeacher.get(i);
             }
         }
         return "Can't find. ";
@@ -109,6 +111,7 @@ public class TeacherManagement implements Management<Teacher> {
             }
         }
     }
+
     public int size() {
         return listTeacher.size();
     }

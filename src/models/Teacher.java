@@ -22,8 +22,7 @@ public class Teacher extends Person {
 
     @Override
     public String toString() {
-        return "models.Teacher{" + " Name teacher: " + getName() + ", Age: " + getAge() + ", Id: " + getId() +
-                ", Expertise: '" + expertise + '\'' +
-                '}';
+        return String.format("%-5s%-10s%-7s%-5s", getId(), getName(), getAge(), getExpertise());
+
     }
 }
