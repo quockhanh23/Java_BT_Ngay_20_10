@@ -5,6 +5,7 @@ import models.Student;
 import models.Teacher;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.Scanner;
 
@@ -23,8 +24,8 @@ public class TeacherManagement implements Management<Teacher> {
     public void print() {
         System.out.println("_________________________________");
         System.out.println(String.format("%-5s%-10s%-7s%-5s", "ID", "Name", "Age", "Expertise"));
-        for (int i = 0; i < listTeacher.size(); i++) {
-            System.out.println(listTeacher.get(i));
+        for (Teacher teacher : listTeacher) {
+            System.out.println(teacher);
         }
     }
 
@@ -69,6 +70,7 @@ public class TeacherManagement implements Management<Teacher> {
     }
 
     public Teacher creat() {
+
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter name: ");
         String name = scanner.nextLine();
@@ -102,13 +104,16 @@ public class TeacherManagement implements Management<Teacher> {
 
     public void findIndexByName() {
         Scanner scanner = new Scanner(System.in);
-        String name1 = scanner.nextLine();
-        for (int i = 0; i < listTeacher.size(); i++) {
-            boolean check = listTeacher.get(i).getName().equals(name1);
-            if (check) {
-                System.out.println("Had found: " + listTeacher.get(i).getName() +
-                        " information: " + listTeacher.get(i));
+        try {
+            String name1 = scanner.nextLine();
+            for (int i = 0; i < listTeacher.size(); i++) {
+                boolean check = listTeacher.get(i).getName().equals(name1);
+                if (check) {
+                    System.out.println("Had found teacher name: " + listTeacher.get(i).getName() +
+                            " information: " + listTeacher.get(i));
+                }
             }
+        } catch (Exception ignored) {
         }
     }
 
@@ -122,5 +127,9 @@ public class TeacherManagement implements Management<Teacher> {
 
     public void sortBySpecialized() {
         listTeacher.sort(Comparator.comparing(Teacher::getExpertise));
+    }
+
+    public void sortById() {
+        listTeacher.sort(Comparator.comparingInt(Person::getId));
     }
 }
