@@ -34,7 +34,6 @@ public class ParentManagement implements Management<Parents> {
         for (int i = 0; i < listParent.size(); i++) {
             if (listParent.get(i).getId() == id) {
                 return i;
-
             }
         }
         return -1;

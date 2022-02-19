@@ -21,7 +21,6 @@ public class SecurityManagement implements Management<Security> {
             System.out.println(listSecurity.get(i));
 
         }
-
     }
 
     @Override

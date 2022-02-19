@@ -104,16 +104,13 @@ public class TeacherManagement implements Management<Teacher> {
 
     public void findIndexByName() {
         Scanner scanner = new Scanner(System.in);
-        try {
-            String name1 = scanner.nextLine();
-            for (int i = 0; i < listTeacher.size(); i++) {
-                boolean check = listTeacher.get(i).getName().equals(name1);
-                if (check) {
-                    System.out.println("Had found teacher name: " + listTeacher.get(i).getName() +
-                            " information: " + listTeacher.get(i));
-                }
+        String name1 = scanner.nextLine();
+        for (int i = 0; i < listTeacher.size(); i++) {
+            boolean check = listTeacher.get(i).getName().equals(name1);
+            if (check) {
+                System.out.println("Teacher: " + listTeacher.get(i).getName() +
+                        ", information: " + listTeacher.get(i));
             }
-        } catch (Exception ignored) {
         }
     }
 

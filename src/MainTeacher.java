@@ -1,4 +1,6 @@
+import models.Student;
 import models.Teacher;
+import service.impl.StudentManagement;
 import service.impl.TeacherManagement;
 
 import java.util.Collection;
@@ -6,15 +8,12 @@ import java.util.Collections;
 import java.util.Scanner;
 
 public class MainTeacher {
-    public static void main(String[] args) {
+    public static void Teacher() {
         TeacherManagement teacherManagement = new TeacherManagement();
         teacherManagement.add(new Teacher(1, "k1", 22, "Match"));
         teacherManagement.add(new Teacher(2, "k2", 30, "Chemistry"));
-        teacherManagement.add(new Teacher(3, "k3", 45, "Biological"));
-        teacherManagement.add(new Teacher(4, "k4", 38, "Geography"));
-
         int choice = -1;
-        while (choice != 0) {
+        while (true) {
             Scanner scanner = new Scanner(System.in);
             try {
                 System.out.println("Main menu: ");
@@ -28,11 +27,13 @@ public class MainTeacher {
                 System.out.println("8. Check list is empty. ");
                 System.out.println("9. Find the teacher by name. ");
                 System.out.println("10. Sort the teacher by name. ");
+                System.out.println("11. Back to Main menu. ");
                 System.out.println("0. End program. ");
                 choice = scanner.nextInt();
-            } catch (Exception e) {
+            } catch (Exception ignored) {
                 System.out.println("Error!!. ");
                 System.out.println("Back to menu. ");
+                System.out.println("_________________________________");
             }
             switch (choice) {
                 case 1:
@@ -40,7 +41,6 @@ public class MainTeacher {
                     teacherManagement.print();
                     System.out.println("_________________________________");
                     break;
-
                 case 2:
                     try {
                         System.out.println("You just chose number: " + choice);
@@ -50,9 +50,9 @@ public class MainTeacher {
                     } catch (Exception ignored) {
                         System.out.println("Error!!. ");
                         System.out.println("Back to menu. ");
+                        System.out.println("_________________________________");
                         break;
                     }
-
                 case 3:
                     try {
                         System.out.println("You just chose number: " + choice);
@@ -71,16 +71,15 @@ public class MainTeacher {
                     } catch (Exception ignored) {
                         System.out.println("Error!!. ");
                         System.out.println("Back to menu. ");
+                        System.out.println("_________________________________");
                         break;
                     }
-
                 case 4:
                     System.out.println("You just chose number: " + choice);
                     teacherManagement.sortBySpecialized();
                     teacherManagement.print();
                     System.out.println("_________________________________");
                     break;
-
                 case 5:
                     try {
                         System.out.println("You just chose number: " + choice);
@@ -94,14 +93,14 @@ public class MainTeacher {
                     } catch (Exception ignored) {
                         System.out.println("Error!!. ");
                         System.out.println("Back to menu. ");
+                        System.out.println("_________________________________");
                         break;
                     }
-
                 case 6:
                     try {
                         System.out.println("You just chose number: " + choice);
                         System.out.print("Enter id: ");
-                        int find = scanner.nextInt();
+                            int find = scanner.nextInt();
                         teacherManagement.findIndexById2(find);
                         System.out.println(teacherManagement.findIndexById2(find));
                         System.out.println("_________________________________");
@@ -109,14 +108,21 @@ public class MainTeacher {
                     } catch (Exception ignored) {
                         System.out.println("Error!!. ");
                         System.out.println("Back to menu. ");
+                        System.out.println("_________________________________");
                         break;
                     }
-
                 case 7:
-                    System.out.println("You just chose number: " + choice);
-                    teacherManagement.deleteAll();
-                    System.out.println("_________________________________");
-                    break;
+                    try {
+                        System.out.println("You just chose number: " + choice);
+                        teacherManagement.deleteAll();
+                        System.out.println("_________________________________");
+                        break;
+                    } catch (Exception ignored) {
+                        System.out.println("Error!!. ");
+                        System.out.println("Back to menu. ");
+                        System.out.println("_________________________________");
+                        break;
+                    }
                 case 8:
                     System.out.println("You just chose number: " + choice);
                     teacherManagement.checkList();
@@ -134,6 +140,9 @@ public class MainTeacher {
                     teacherManagement.print();
                     System.out.println("_________________________________");
                     break;
+                case 11:
+                    BigMain.showMenu();
+                    break;
                 case 0:
                     System.out.println("You just chose number: " + choice + " --> Ending!...");
                     System.out.println("_________________________________");
@@ -142,6 +151,7 @@ public class MainTeacher {
                 default:
                     System.out.println("This option is not available. ");
                     System.out.println("_________________________________");
+                    break;
             }
         }
     }

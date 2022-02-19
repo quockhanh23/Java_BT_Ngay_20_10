@@ -4,24 +4,30 @@ import service.impl.StudentManagement;
 import java.util.Scanner;
 
 public class MainStudent {
-    public static void main(String[] args) {
+    public static void Student() {
         StudentManagement studentManagement = new StudentManagement();
         studentManagement.add(new Student(1, "Khánh", 1, 1));
 
         int choice = -1;
         while (choice != 0) {
             Scanner scanner = new Scanner(System.in);
-            System.out.println("Menu: ");
-            System.out.println("1. Print list student. ");
-            System.out.println("2. Add student. ");
-            System.out.println("3. Find student by id.");
-            System.out.println("4. Sort student by medium score. ");
-            System.out.println("5. Delete student by id. ");
-            System.out.println("6. Total score of all students. ");
-            System.out.println("7. Edit student. ");
-            System.out.println("0. End program. ");
+            try {
+                System.out.println("Menu: ");
+                System.out.println("1. Print list student. ");
+                System.out.println("2. Add student. ");
+                System.out.println("3. Find student by id.");
+                System.out.println("4. Sort student by medium score. ");
+                System.out.println("5. Delete student by id. ");
+                System.out.println("6. Total score of all students. ");
+                System.out.println("7. Edit student. ");
+                System.out.println("8. Back to main menu. ");
+                System.out.println("0. End program. ");
 
-            choice = scanner.nextInt();
+                choice = scanner.nextInt();
+            } catch (Exception e) {
+                System.out.println("Wrong input!. ");
+            }
+
             switch (choice) {
                 case 1:
                     studentManagement.print();
@@ -55,6 +61,9 @@ public class MainStudent {
                     } else
                         System.out.println("No id had found");
                     System.out.println("****************************");
+                    break;
+                case 8:
+                    BigMain.showMenu();
                     break;
 
                 case 0:
